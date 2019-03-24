@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 20; i++) {
+        arr[i] = Math.floor(Math.random() * 100);
+    }
+    console.log(arr + "<br>");
+
+    function LinearSearch(arr, data) {
+        for (let i = 0; i < arr.length; i++) {
+            if (data === arr[i]) {
+                console.log(data + "o vi tri " + i);
+                break;
+            }
+
+        }
+console.log (- 1);
+
+    }
+
+    function BinarySeach(arr, data) {
+        let lowerBound = 1;
+        let upperBound = arr.length - 1;
+        let midPoint = 0;
+        let check = true;
+        for (let i = 0; i < arr.length; i++) {
+            for (let j = i; j < arr.length; j++) {
+                min = arr[i];
+                if (min > arr[j]) {
+                    arr[i] = arr[j];
+                    arr[j] = min;
+                }
+            }
+        }
+        console.log(arr);
+        while (check) {
+            let midPoint = Math.floor(lowerBound + (upperBound - lowerBound) / 2);
+            if (upperBound < lowerBound) {
+                console.log(data + "khong ton tai");
+                check = false;
+            }
+            if (arr[midPoint] < data) {
+                lowerBound = midPoint + 1;
+            } else if (arr[midPoint] > data) {
+                upperBound = midPoint - 1;
+            } else {
+                console.log("data o vi tri" + midPoint);
+                check = false;
+            }
+        }
+    }
+
+    let array2 = LinearSearch(arr, 10);
+    let array1 = BinarySeach(arr, 20);
+
+</script>
+</body>
+</html>
