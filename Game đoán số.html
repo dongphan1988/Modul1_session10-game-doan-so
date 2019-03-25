@@ -10,18 +10,19 @@
     for (let i = 0; i < 20; i++) {
         arr[i] = Math.floor(Math.random() * 100);
     }
-    console.log(arr + "<br>");
-
     function LinearSearch(arr, data) {
         for (let i = 0; i < arr.length; i++) {
-            if (data === arr[i]) {
-                console.log(data + "o vi tri " + i);
-                break;
+            if (data == arr[i]) {
+                return 1;
             }
-
-        }
-console.log (- 1);
-
+        }return - 1
+    }
+    console.log(arr);
+    let a = LinearSearch(arr,11);
+    if(a == 1){
+        console.log("11 co trong ham")
+    }else{
+        console.log("khong co")
     }
 
     function BinarySeach(arr, data) {
@@ -56,7 +57,7 @@ console.log (- 1);
         }
     }
 
-    let array2 = LinearSearch(arr, 10);
+
     let array1 = BinarySeach(arr, 20);
 
 </script>
